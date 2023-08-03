@@ -13,6 +13,7 @@
 		22F308822A7B5FA40078B339 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F308812A7B5FA40078B339 /* Preview Assets.xcassets */; };
 		22F3088A2A7B61A30078B339 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 22F308892A7B61A30078B339 /* FirebaseFirestore */; };
 		22F3088C2A7B61A30078B339 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 22F3088B2A7B61A30078B339 /* FirebaseFirestoreCombine-Community */; };
+		22F3088E2A7B62D10078B339 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22F3088D2A7B62D10078B339 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		22F3087C2A7B5FA30078B339 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22F3087E2A7B5FA40078B339 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22F308812A7B5FA40078B339 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		22F3088D2A7B62D10078B339 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		22F308792A7B5FA30078B339 /* TaiNguyen-Notes */ = {
 			isa = PBXGroup;
 			children = (
+				22F3088D2A7B62D10078B339 /* GoogleService-Info.plist */,
 				22F3087A2A7B5FA30078B339 /* TaiNguyen_NotesApp.swift */,
 				22F3087C2A7B5FA30078B339 /* ContentView.swift */,
 				22F3087E2A7B5FA40078B339 /* Assets.xcassets */,
@@ -138,6 +141,7 @@
 			files = (
 				22F308822A7B5FA40078B339 /* Preview Assets.xcassets in Resources */,
 				22F3087F2A7B5FA40078B339 /* Assets.xcassets in Resources */,
+				22F3088E2A7B62D10078B339 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
