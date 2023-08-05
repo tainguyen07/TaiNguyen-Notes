@@ -11,46 +11,56 @@ struct ContentView: View {
     @ObservedObject var myNotes: MyNote
     @State var isShowingPopover = false
     var body: some View {
-        ZStack {
-            NavigationView {
-                List {
-                    Section(header: Text("Pinned")
-                        .font(.body)
-                        .fontWeight(.bold)
-                        .foregroundColor(.gray)) {
-                            ForEach(myNotes.notes, id: \.self) { note in
-                                NoteCell(name: note.name, content: note.content)
+        TabView {
+            ZStack {
+                NavigationView {
+                    List {
+                        Section(header: Text("Pinned")
+                            .font(.body)
+                            .fontWeight(.bold)
+                            .foregroundColor(.gray)) {
+                                ForEach(myNotes.notes, id: \.self) { note in
+                                    NoteCell(name: note.name, content: note.content)
+                                }
+                                .onDelete { indexSet in
+                                    myNotes.notes.remove(atOffsets: indexSet)
+                                }
                             }
-                            .onDelete { indexSet in
-                                myNotes.notes.remove(atOffsets: indexSet)
+                            .textCase(nil)
+                        Section(header: Text("Others")
+                            .font(.body)
+                            .fontWeight(.bold)
+                            .foregroundColor(.gray)) {
+                                ForEach(myNotes.notes, id: \.self) { note in
+                                    NoteCell(name: note.name, content: note.content)
+                                }
                             }
-                        }
-                        .textCase(nil)
-                    Section(header: Text("Others")
-                        .font(.body)
-                        .fontWeight(.bold)
-                        .foregroundColor(.gray)) {
-                            ForEach(myNotes.notes, id: \.self) { note in
-                                NoteCell(name: note.name, content: note.content)
+                            .textCase(nil)
+                    }
+                    .listStyle(InsetGroupedListStyle())
+                    .navigationTitle("Notes")
+                    .toolbar {
+                        ToolbarItemGroup(placement: .navigationBarTrailing) {
+                            Button {
+                                isShowingPopover.toggle()
+                            } label: {
+                                Image(systemName: "square.and.pencil")
                             }
+                            
                         }
-                        .textCase(nil)
-                }
-                .listStyle(InsetGroupedListStyle())
-                .navigationTitle("Notes")
-                .toolbar {
-                    ToolbarItemGroup(placement: .navigationBarTrailing) {
-                        Button {
-                            isShowingPopover.toggle()
-                        } label: {
-                            Image(systemName: "square.and.pencil")
-                        }
-
                     }
                 }
+                if isShowingPopover {
+                    NewNoteView(myNotes: myNotes, isShowingPopover: $isShowingPopover)
+                }
             }
-            if isShowingPopover {
-                NewNoteView(myNotes: myNotes, isShowingPopover: $isShowingPopover)
+            .tabItem {
+                Label("Notes",systemImage: "list.dash")
+            }
+            
+            ProfileView()
+            .tabItem {
+                Label("Profile",systemImage: "person.crop.circle")
             }
         }
     }
