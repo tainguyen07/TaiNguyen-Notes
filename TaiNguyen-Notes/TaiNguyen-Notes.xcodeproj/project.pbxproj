@@ -14,6 +14,7 @@
 		22F3088A2A7B61A30078B339 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 22F308892A7B61A30078B339 /* FirebaseFirestore */; };
 		22F3088C2A7B61A30078B339 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 22F3088B2A7B61A30078B339 /* FirebaseFirestoreCombine-Community */; };
 		22F3088E2A7B62D10078B339 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22F3088D2A7B62D10078B339 /* GoogleService-Info.plist */; };
+		22F308902A7E20430078B339 /* MyNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3088F2A7E20430078B339 /* MyNote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		22F3087E2A7B5FA40078B339 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22F308812A7B5FA40078B339 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		22F3088D2A7B62D10078B339 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		22F3088F2A7E20430078B339 /* MyNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				22F3088D2A7B62D10078B339 /* GoogleService-Info.plist */,
 				22F3087A2A7B5FA30078B339 /* TaiNguyen_NotesApp.swift */,
 				22F3087C2A7B5FA30078B339 /* ContentView.swift */,
+				22F3088F2A7E20430078B339 /* MyNote.swift */,
 				22F3087E2A7B5FA40078B339 /* Assets.xcassets */,
 				22F308802A7B5FA40078B339 /* Preview Content */,
 			);
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22F3087D2A7B5FA30078B339 /* ContentView.swift in Sources */,
+				22F308902A7E20430078B339 /* MyNote.swift in Sources */,
 				22F3087B2A7B5FA30078B339 /* TaiNguyen_NotesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
