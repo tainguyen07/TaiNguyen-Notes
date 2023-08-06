@@ -17,6 +17,7 @@
 		22F308902A7E20430078B339 /* MyNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3088F2A7E20430078B339 /* MyNote.swift */; };
 		22F308922A7EB2BE0078B339 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F308912A7EB2BE0078B339 /* ProfileView.swift */; };
 		22F308942A7EB31E0078B339 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F308932A7EB31E0078B339 /* NotesView.swift */; };
+		22F308962A7F6EE40078B339 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F308952A7F6EE40078B339 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		22F3088F2A7E20430078B339 /* MyNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNote.swift; sourceTree = "<group>"; };
 		22F308912A7EB2BE0078B339 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		22F308932A7EB31E0078B339 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		22F308952A7F6EE40078B339 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				22F308932A7EB31E0078B339 /* NotesView.swift */,
 				22F308912A7EB2BE0078B339 /* ProfileView.swift */,
 				22F3088F2A7E20430078B339 /* MyNote.swift */,
+				22F308952A7F6EE40078B339 /* Constant.swift */,
 				22F3087E2A7B5FA40078B339 /* Assets.xcassets */,
 				22F308802A7B5FA40078B339 /* Preview Content */,
 			);
@@ -165,6 +168,7 @@
 				22F3087D2A7B5FA30078B339 /* ContentView.swift in Sources */,
 				22F308942A7EB31E0078B339 /* NotesView.swift in Sources */,
 				22F308902A7E20430078B339 /* MyNote.swift in Sources */,
+				22F308962A7F6EE40078B339 /* Constant.swift in Sources */,
 				22F3087B2A7B5FA30078B339 /* TaiNguyen_NotesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

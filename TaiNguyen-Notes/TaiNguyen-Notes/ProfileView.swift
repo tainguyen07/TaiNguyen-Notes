@@ -16,11 +16,15 @@ struct ProfileView: View {
                 HStack {
                     Text("Username")
                         .bold()
-                    TextField("Anonymous", text: $username)
+                    TextField(myAnonymous, text: $username)
                         .frame(width: 200, height: 10)
                         .padding()
                         .background(Color.gray.opacity(0.3))
                         .cornerRadius(7)
+                        .submitLabel(.done)
+                        .onSubmit {
+                            UserDefaults.standard.set(self.username, forKey: myUsername)
+                        }
                 }
                 Spacer()
                 List {
@@ -36,6 +40,11 @@ struct ProfileView: View {
                 .listStyle(InsetGroupedListStyle())
             }
             .navigationTitle("Profile")
+        }
+        .onAppear {
+            if let username = UserDefaults.standard.string(forKey: myUsername) {
+                self.username = username
+            }
         }
     }
 }
