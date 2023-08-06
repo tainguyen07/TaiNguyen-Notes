@@ -22,7 +22,6 @@ struct NotesView: View {
                                 NoteCell(note: note)
                             }
                             .onDelete { indexSet in
-//                                myNotes.notes.remove(atOffsets: indexSet)
                                 deleteTask(at: indexSet)
                             }
                         }
@@ -55,7 +54,7 @@ struct NotesView: View {
             }
         }
         .onAppear {
-            FirebaseManager.shared.observeTasks { observedTasks in
+            FirebaseManager.shared.observeNotes { observedTasks in
                 myNotes.notes = observedTasks
             }
         }
@@ -63,7 +62,7 @@ struct NotesView: View {
     private func deleteTask(at offsets: IndexSet) {
         offsets.forEach { index in
             let note = myNotes.notes[index]
-            FirebaseManager.shared.deleteTask(withID: note.id)
+            FirebaseManager.shared.deleteNote(withID: note.id)
         }
     }
 }
@@ -131,7 +130,7 @@ struct NewNoteView: View {
                         Button {
                             let note = Note(name: newNoteName, content: newNoteContent, username: "")
                             myNotes.notes.append(note)
-                            FirebaseManager.shared.addTask(note: note)
+                            FirebaseManager.shared.addNote(note: note)
 
                             isShowingPopover.toggle()
                         } label: {

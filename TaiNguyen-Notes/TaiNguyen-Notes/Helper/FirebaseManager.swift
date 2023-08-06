@@ -14,7 +14,7 @@ class FirebaseManager {
     
     private let databaseRef = Database.database().reference()
     
-    func observeTasks(completion: @escaping ([Note]) -> Void) {
+    func observeNotes(completion: @escaping ([Note]) -> Void) {
         databaseRef.child(myNotes).observe(.value) { snapshot in
             var notes: [Note] = []
             for childSnapshot in snapshot.children {
@@ -33,7 +33,7 @@ class FirebaseManager {
         }
     }
     
-    func addTask(note: Note) {
+    func addNote(note: Note) {
         let taskData: [String: Any] = [
             "id" : note.id,
             "name" : note.name,
@@ -45,7 +45,7 @@ class FirebaseManager {
         newTaskRef.setValue(taskData)
     }
     
-    func deleteTask(withID id: String) {
+    func deleteNote(withID id: String) {
         let taskRef = databaseRef.child(myNotes).child(id)
         taskRef.removeValue()
     }
