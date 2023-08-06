@@ -21,10 +21,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct TaiNguyen_NotesApp: App {
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject private var myNote = MyNote()
     var body: some Scene {
         WindowGroup {
-            ContentView(myNotes: myNote)
+            ContentView()
         }
     }
 }

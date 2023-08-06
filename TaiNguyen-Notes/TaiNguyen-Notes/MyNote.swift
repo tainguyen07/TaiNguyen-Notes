@@ -8,7 +8,10 @@
 import Foundation
 
 class MyNote: ObservableObject {
-    @Published var notes = [Note]()
+    @Published var notes = [
+        Note(name: "Note1", content: "Test content 1"),
+        Note(name: "Note2", content: "Test content 2")
+    ]
 }
 
 struct Note: Identifiable, Hashable {
@@ -16,8 +19,3 @@ struct Note: Identifiable, Hashable {
     var name: String
     var content: String
 }
-
-var testNotes = [
-    Note(name: "Note1", content: "Test content 1"),
-    Note(name: "Note2", content: "Test content 2")
-]
