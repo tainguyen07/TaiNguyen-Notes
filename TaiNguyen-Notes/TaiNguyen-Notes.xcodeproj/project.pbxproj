@@ -76,6 +76,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		225CF7C92A7FAAF500CC0C15 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				22F308952A7F6EE40078B339 /* Constant.swift */,
+				225CF7C22A7F9F5A00CC0C15 /* FirebaseManager.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		22F3086E2A7B5FA30078B339 = {
 			isa = PBXGroup;
 			children = (
@@ -100,8 +109,7 @@
 				225CF7C82A7FAAD600CC0C15 /* Model */,
 				225CF7C42A7FAA8800CC0C15 /* View */,
 				225CF7C52A7FAA8F00CC0C15 /* ViewModel */,
-				22F308952A7F6EE40078B339 /* Constant.swift */,
-				225CF7C22A7F9F5A00CC0C15 /* FirebaseManager.swift */,
+				225CF7C92A7FAAF500CC0C15 /* Helper */,
 				22F3087E2A7B5FA40078B339 /* Assets.xcassets */,
 				22F308802A7B5FA40078B339 /* Preview Content */,
 			);
