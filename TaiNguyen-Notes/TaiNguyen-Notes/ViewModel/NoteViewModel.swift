@@ -9,4 +9,5 @@ import Foundation
 
 class NoteViewModel: ObservableObject {
     @Published var notes: [Note] = []
+    @Published var pinnedNote: [Note] = []
 }

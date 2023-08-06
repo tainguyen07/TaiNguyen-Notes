@@ -18,11 +18,8 @@ struct NotesView: View {
                         .font(.body)
                         .fontWeight(.bold)
                         .foregroundColor(.gray)) {
-                            ForEach(myNotes.notes, id: \.self) { note in
+                            ForEach(myNotes.pinnedNote, id: \.self) { note in
                                 NoteCell(note: note)
-                            }
-                            .onDelete { indexSet in
-                                deleteTask(at: indexSet)
                             }
                         }
                         .textCase(nil)
@@ -32,6 +29,9 @@ struct NotesView: View {
                         .foregroundColor(.gray)) {
                             ForEach(myNotes.notes, id: \.self) { note in
                                 NoteCell(note: note)
+                            }
+                            .onDelete { indexSet in
+                                deleteTask(at: indexSet)
                             }
                         }
                         .textCase(nil)
@@ -57,6 +57,7 @@ struct NotesView: View {
             FirebaseManager.shared.observeNotes { observedTasks in
                 myNotes.notes = observedTasks
             }
+            myNotes.pinnedNote = Note.readData()
         }
     }
     private func deleteTask(at offsets: IndexSet) {
@@ -128,7 +129,7 @@ struct NewNoteView: View {
                             isShowingPopover.toggle()
                         }.frame(maxWidth: .infinity)
                         Button {
-                            let note = Note(name: newNoteName, content: newNoteContent, username: "")
+                            let note = Note(name: newNoteName, content: newNoteContent)
                             myNotes.notes.append(note)
                             FirebaseManager.shared.addNote(note: note)
 

@@ -21,11 +21,9 @@ class FirebaseManager {
                 if let childSnapshot = childSnapshot as? DataSnapshot,
                    let taskDict = childSnapshot.value as? [String: Any],
                    let name = taskDict["name"] as? String,
-                   let content = taskDict["content"] as? String,
-                   let username = taskDict["username"] as? String,
-                   let uuidDevice = taskDict["uuidDevice"] as? String {
+                   let content = taskDict["content"] as? String {
                     let id = childSnapshot.key
-                    let note = Note(id: id,name: name, content: content, username: username,uuidDevice: uuidDevice)
+                    let note = Note(id: id,name: name, content: content)
                     notes.append(note)
                 }
             }
@@ -37,9 +35,7 @@ class FirebaseManager {
         let taskData: [String: Any] = [
             "id" : note.id,
             "name" : note.name,
-            "content" : note.content,
-            "username" : note.username,
-            "uuidDevice" : note.uuidDevice ?? ""
+            "content" : note.content
         ]
         let newTaskRef = databaseRef.child(myNotes).childByAutoId()
         newTaskRef.setValue(taskData)

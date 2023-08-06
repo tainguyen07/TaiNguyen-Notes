@@ -28,12 +28,12 @@ struct ProfileView: View {
                 }
                 Spacer()
                 List {
-                    Section("My notes") {
-                        ForEach(myNotes.notes, id: \.self) { note in
+                    Section("My pinned notes") {
+                        ForEach(myNotes.pinnedNote, id: \.self) { note in
                             NoteCell(note: note)
                         }
                         .onDelete { indexSet in
-                            myNotes.notes.remove(atOffsets: indexSet)
+                            myNotes.pinnedNote.remove(atOffsets: indexSet)
                         }
                     }
                 }
