@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import FirebaseDatabase
 struct ContentView: View {
     var body: some View {
         TabView {
@@ -20,7 +20,7 @@ struct ContentView: View {
                 Label("Profile",systemImage: "person.crop.circle")
             }
         }
-        .environmentObject(MyNote())
+        .environmentObject(NoteViewModel())
     }
 }
 

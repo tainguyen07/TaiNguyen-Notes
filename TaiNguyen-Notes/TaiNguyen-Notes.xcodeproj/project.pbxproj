@@ -9,25 +9,27 @@
 /* Begin PBXBuildFile section */
 		225CF7BF2A7F765B00CC0C15 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 225CF7BE2A7F765B00CC0C15 /* FirebaseDatabase */; };
 		225CF7C12A7F765B00CC0C15 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 225CF7C02A7F765B00CC0C15 /* FirebaseDatabaseSwift */; };
+		225CF7C32A7F9F5A00CC0C15 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225CF7C22A7F9F5A00CC0C15 /* FirebaseManager.swift */; };
 		22F3087B2A7B5FA30078B339 /* TaiNguyen_NotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3087A2A7B5FA30078B339 /* TaiNguyen_NotesApp.swift */; };
 		22F3087D2A7B5FA30078B339 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3087C2A7B5FA30078B339 /* ContentView.swift */; };
 		22F3087F2A7B5FA40078B339 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F3087E2A7B5FA40078B339 /* Assets.xcassets */; };
 		22F308822A7B5FA40078B339 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F308812A7B5FA40078B339 /* Preview Assets.xcassets */; };
 		22F3088E2A7B62D10078B339 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22F3088D2A7B62D10078B339 /* GoogleService-Info.plist */; };
-		22F308902A7E20430078B339 /* MyNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3088F2A7E20430078B339 /* MyNote.swift */; };
+		22F308902A7E20430078B339 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3088F2A7E20430078B339 /* NoteViewModel.swift */; };
 		22F308922A7EB2BE0078B339 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F308912A7EB2BE0078B339 /* ProfileView.swift */; };
 		22F308942A7EB31E0078B339 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F308932A7EB31E0078B339 /* NotesView.swift */; };
 		22F308962A7F6EE40078B339 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F308952A7F6EE40078B339 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		225CF7C22A7F9F5A00CC0C15 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		22F308772A7B5FA30078B339 /* TaiNguyen-Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaiNguyen-Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F3087A2A7B5FA30078B339 /* TaiNguyen_NotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaiNguyen_NotesApp.swift; sourceTree = "<group>"; };
 		22F3087C2A7B5FA30078B339 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22F3087E2A7B5FA40078B339 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22F308812A7B5FA40078B339 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		22F3088D2A7B62D10078B339 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		22F3088F2A7E20430078B339 /* MyNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNote.swift; sourceTree = "<group>"; };
+		22F3088F2A7E20430078B339 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		22F308912A7EB2BE0078B339 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		22F308932A7EB31E0078B339 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
 		22F308952A7F6EE40078B339 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -70,8 +72,9 @@
 				22F3087C2A7B5FA30078B339 /* ContentView.swift */,
 				22F308932A7EB31E0078B339 /* NotesView.swift */,
 				22F308912A7EB2BE0078B339 /* ProfileView.swift */,
-				22F3088F2A7E20430078B339 /* MyNote.swift */,
+				22F3088F2A7E20430078B339 /* NoteViewModel.swift */,
 				22F308952A7F6EE40078B339 /* Constant.swift */,
+				225CF7C22A7F9F5A00CC0C15 /* FirebaseManager.swift */,
 				22F3087E2A7B5FA40078B339 /* Assets.xcassets */,
 				22F308802A7B5FA40078B339 /* Preview Content */,
 			);
@@ -166,8 +169,9 @@
 			files = (
 				22F308922A7EB2BE0078B339 /* ProfileView.swift in Sources */,
 				22F3087D2A7B5FA30078B339 /* ContentView.swift in Sources */,
+				225CF7C32A7F9F5A00CC0C15 /* FirebaseManager.swift in Sources */,
 				22F308942A7EB31E0078B339 /* NotesView.swift in Sources */,
-				22F308902A7E20430078B339 /* MyNote.swift in Sources */,
+				22F308902A7E20430078B339 /* NoteViewModel.swift in Sources */,
 				22F308962A7F6EE40078B339 /* Constant.swift in Sources */,
 				22F3087B2A7B5FA30078B339 /* TaiNguyen_NotesApp.swift in Sources */,
 			);

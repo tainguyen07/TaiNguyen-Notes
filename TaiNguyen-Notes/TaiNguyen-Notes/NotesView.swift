@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NotesView: View {
-    @EnvironmentObject var myNotes: MyNote
+    @EnvironmentObject var myNotes: NoteViewModel
     @State var isShowingPopover = false
     var body: some View {
         ZStack {
@@ -53,13 +53,18 @@ struct NotesView: View {
                 NewNoteView(isShowingPopover: $isShowingPopover)
             }
         }
+        .onAppear {
+            FirebaseManager.shared.observeTasks { observedTasks in
+                myNotes.notes = observedTasks
+            }
+        }
     }
 }
 
 struct NotesView_Previews: PreviewProvider {
     static var previews: some View {
         NotesView()
-            .environmentObject(MyNote())
+            .environmentObject(NoteViewModel())
     }
 }
 
@@ -78,7 +83,7 @@ struct NoteCell: View {
 }
 
 struct NewNoteView: View {
-    @EnvironmentObject var myNotes: MyNote
+    @EnvironmentObject var myNotes: NoteViewModel
     @Binding var isShowingPopover: Bool
     
     init(isShowingPopover: Binding<Bool>) {
@@ -114,7 +119,10 @@ struct NewNoteView: View {
                             isShowingPopover.toggle()
                         }.frame(maxWidth: .infinity)
                         Button {
-                            myNotes.notes.append(Note(name: newNoteName, content: newNoteContent))
+                            let note = Note(name: newNoteName, content: newNoteContent, username: "")
+                            myNotes.notes.append(note)
+                            FirebaseManager.shared.addTask(note: note)
+
                             isShowingPopover.toggle()
                         } label: {
                             Text("Save")
