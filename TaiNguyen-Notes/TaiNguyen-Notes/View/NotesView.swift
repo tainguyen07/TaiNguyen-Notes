@@ -22,7 +22,8 @@ struct NotesView: View {
                                 NoteCell(note: note)
                             }
                             .onDelete { indexSet in
-                                myNotes.notes.remove(atOffsets: indexSet)
+//                                myNotes.notes.remove(atOffsets: indexSet)
+                                deleteTask(at: indexSet)
                             }
                         }
                         .textCase(nil)
@@ -57,6 +58,12 @@ struct NotesView: View {
             FirebaseManager.shared.observeTasks { observedTasks in
                 myNotes.notes = observedTasks
             }
+        }
+    }
+    private func deleteTask(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let note = myNotes.notes[index]
+            FirebaseManager.shared.deleteTask(withID: note.id)
         }
     }
 }
