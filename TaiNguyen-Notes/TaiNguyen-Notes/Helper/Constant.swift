@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
 let myAnonymous = "Anonymous"
 let myUsername = "Username"
+let myWidth = UIScreen.main.bounds.width
+let myHeight = UIScreen.main.bounds.height

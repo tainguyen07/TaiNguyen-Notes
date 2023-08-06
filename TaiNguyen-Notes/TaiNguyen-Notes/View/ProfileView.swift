@@ -30,7 +30,7 @@ struct ProfileView: View {
                 List {
                     Section("My notes") {
                         ForEach(myNotes.notes, id: \.self) { note in
-                            NoteCell(name: note.name, content: note.content)
+                            NoteCell(note: note)
                         }
                         .onDelete { indexSet in
                             myNotes.notes.remove(atOffsets: indexSet)

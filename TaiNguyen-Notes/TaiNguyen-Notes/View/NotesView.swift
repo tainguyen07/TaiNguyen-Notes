@@ -19,7 +19,7 @@ struct NotesView: View {
                         .fontWeight(.bold)
                         .foregroundColor(.gray)) {
                             ForEach(myNotes.notes, id: \.self) { note in
-                                NoteCell(name: note.name, content: note.content)
+                                NoteCell(note: note)
                             }
                             .onDelete { indexSet in
                                 myNotes.notes.remove(atOffsets: indexSet)
@@ -31,7 +31,7 @@ struct NotesView: View {
                         .fontWeight(.bold)
                         .foregroundColor(.gray)) {
                             ForEach(myNotes.notes, id: \.self) { note in
-                                NoteCell(name: note.name, content: note.content)
+                                NoteCell(note: note)
                             }
                         }
                         .textCase(nil)
@@ -69,14 +69,17 @@ struct NotesView_Previews: PreviewProvider {
 }
 
 struct NoteCell: View {
-    var name: String
-    var content: String
+    var note: Note
     var body: some View {
-        HStack {
-            Image(systemName: "note.text")
-            VStack(alignment: .leading) {
-                Text(name)
-                Text(content)
+        NavigationLink {
+            NoteDetailView(note: note)
+        } label: {
+            HStack {
+                Image(systemName: "note.text")
+                VStack(alignment: .leading) {
+                    Text(note.name)
+                    Text(note.content)
+                }
             }
         }
     }
