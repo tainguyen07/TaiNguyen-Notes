@@ -32,9 +32,6 @@ struct ProfileView: View {
                         ForEach(myNotes.pinnedNote, id: \.self) { note in
                             NoteCell(note: note)
                         }
-                        .onDelete { indexSet in
-                            myNotes.pinnedNote.remove(atOffsets: indexSet)
-                        }
                     }
                 }
                 .listStyle(InsetGroupedListStyle())
